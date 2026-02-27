@@ -1,10 +1,18 @@
 #pragma once
 
 #include <vector>
+#include <string>
 
 
 class Card {
     public:
+
+        Card() = default;
+
+        ~Card() = default;
+
+
+    private:
         int manaValue;
         bool permanent;
 
@@ -13,13 +21,6 @@ class Card {
         std::vector<std::string> subType;
         std::vector<std::string> superType;
         std::vector<std::string> oracleText;
-
-        Card();
-
-        ~Card();
-
-
-    private:
 
 
 

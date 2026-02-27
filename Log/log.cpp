@@ -26,3 +26,9 @@ void logNewLine() {
 void logChar(char log) {
 	std::cout << log;
 }
+
+void newLine(int repeats) {
+	for (int i = 0; i < repeats; i++) {
+		std::cout << "\n";
+	}
+}

@@ -6,3 +6,4 @@ void logString(std::string log);
 void logFloat(float log);
 void logNewLine();
 void logChar(char log);
+void newLine(int repeats);

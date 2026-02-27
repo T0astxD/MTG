@@ -1,28 +1,21 @@
-#pragma once
+// #pragma once
 
-#include "Log/Log.h"
-#include <vector>
+// #include "Log/Log.h"
+// #include <vector>
 
-class Land {
-    public:
+// class Land {
+//     public:
 
-        bool isBasic;
-        bool instantSpeed = false;
-        bool permanent = true;
-        int* data;
-        std::string superType;
-        std::string subType;
-        std::vector<Land> landsInPlay;
+//         Land(int size);
 
-        Land(int size);
-
-        ~Land();
+//         ~Land();
 
 
-    private:
-
-
-
-
-
-};
+//     private:
+//         bool isBasic;
+//         bool instantSpeed = false;
+//         bool permanent = true;
+//         int* data;
+//         std::string superType;
+//         std::string subType;
+// };

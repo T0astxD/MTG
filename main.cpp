@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stack>
 #include <vector>
+#include <iostream>
 
 
 #include "Log/log.h"
 #include "Card/Card.h"
 #include "Player/Player.h"
+#include "CardType/Sorcery/Sorcery.h"
+#include "Game/game.h"
 
 
 
@@ -15,10 +18,9 @@
 
 int main() {
 
-    Player player1(10);
-    Player player2(10);
+    Game myGame(100000); //idk how big it needs to be.
 
-    //logString("hi\n");
+    myGame.gameLoop();
 
     return 0;
 }
