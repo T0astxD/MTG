@@ -29,6 +29,10 @@ void Game::gameLoop() {
 
     Player player1(10);
     Sorcery sorcery1(10);
+    newLine(1);
+    std::vector<std::string> player1Deck = player1.importDeck("deck.txt");
+    std::cout<<player1Deck[0];
+    newLine(1);
     newLine(3);
     logString("Player 1 hand size: ");
     logInt(player1.getHandSize());

@@ -4,6 +4,8 @@
 #include "Card/Card.h"
 #include "Player.h"
 #include "Log/log.h"
+#include <bits/stdc++.h>
+#include "Enums/enums.h"
 
 Player::Player(int size){
     data = new int[size];
@@ -25,9 +27,57 @@ int Player::emptyHandCheck() {
     return handSize;
 }
 
-int Player::amongUs() {
-    return 5;
+Card Player::getGraveyardTop(int n) { //n'th element in graveyard
+    return graveyard[n];
 }
+
+int Player::getGraveyardSize() {
+    if (graveyard.size() == 0) {
+        return 0;
+    }
+
+    return graveyard.size();
+}
+
+//returns a two dimentional array with a cards properties
+//on the x axis, and each card on the y-axis
+std::vector<std::string> Player::importDeck(std::string deckName) {
+    std::ifstream myFile(deckName);
+    std::string line;
+    std::vector<std::string> deck;
+    int lineCounter = 0;
+    char delimiter = ' ';
+
+    if (!myFile.is_open()) {
+        logString("File could not open!");
+        //return 1;
+    }
+
+    while (getline(myFile, line)) {
+        deck.push_back(line);
+        lineCounter++;
+    }
+
+    // for (int i = 0; i < lineCounter; i++) {
+    //     getline(myFile, line, delimiter) = deck[i];
+
+    // }
+
+    myFile.close();
+
+    return deck;
+}
+
+
+
+
+
+
+
+//need file import for this to work.
+// void Player::createDeck(std::vector<Card> libraryCards, ) {
+
+// }
 
 // void playsLand(Land land) {
 //     handSize--;

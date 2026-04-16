@@ -6,6 +6,7 @@
 #include "Card/Card.h"
 
 
+
 class Player {
     public:
 
@@ -25,25 +26,9 @@ class Player {
         //     return graveyard;
         // }
 
-        Card getGraveyardTop(int n) { //n'th element in graveyard
+        Card getGraveyardTop(int n);
 
-            //if n > grave.size then not good
-            std::stack<Card> tempGrave = graveyard;
-            
-            for (int i = 0; i < n && !tempGrave.empty(); i++) {
-                tempGrave.pop();
-            }
-            return tempGrave.top();
-        }
-
-        int getGraveyardSize() {
-            if (graveyard.size() == 0) {
-                return 0;
-            }
-
-
-    return graveyard.size();
-}
+        int getGraveyardSize();
 
 
 
@@ -54,7 +39,9 @@ class Player {
 
         int emptyHandCheck();
 
-        int amongUs();
+        std::vector<std::string> importDeck(std::string deckName);
+
+        void turnManagement();
 
         // void playsLand(Land land);
 
@@ -62,11 +49,13 @@ class Player {
         int life = 20;
         int landPlaysLeft;
         //std::vector<Land> landsInPlay;
+        bool yourTurn;
         int landsInPlayCount;
         bool hasProtection;
         int handSize = 7;
         int graveyardSize = 0;
-        std::stack<Card> graveyard;
+        std::vector<Card> graveyard;
+        std::vector<Card> library;
         int* data;
 
 
